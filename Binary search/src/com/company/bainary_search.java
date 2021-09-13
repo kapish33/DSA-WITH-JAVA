@@ -12,13 +12,11 @@ public class bainary_search {
 
         while (start <= end) {
             int mid = (start + (end-start) / 2);
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] < target) {
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] < target) {
                 start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
+            } else end = mid - 1;
+
         }
         return -1;
     }
