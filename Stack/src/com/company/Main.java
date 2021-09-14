@@ -1,19 +1,17 @@
 package com.company;
 
-import java.util.Stack;
-
 public class Main {
     public static void main(String[] args) {
-//	making our own stack
         Mysatck s = new Mysatck();
         s.push(10);
         s.push(20);
         s.push(30);
-        System.out.println(s.pop() + " Popped from stack");
-        System.out.println("Top element is :" + s.peek());
+        s.push(320);
+        System.out.println(s.pop());
+        System.out.println(s.peek());
         System.out.print("Elements present in stack :");
         s.print();
-        Stack<Integer> s;
+        System.out.println(s.size());
     }
 }
 class Mysatck{
@@ -49,7 +47,10 @@ class Mysatck{
     void print(){
         for(int i = top;i>-1;i--){
             System.out.print(" "+ a[i]);
-        }
+        }System.out.println("");
+    }
+    int size() {
+        return top+1;
     }
 }
 
