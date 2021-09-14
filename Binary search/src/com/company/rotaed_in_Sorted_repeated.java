@@ -5,6 +5,9 @@ public class rotaed_in_Sorted_repeated {
         int[] array = {3,3,4,7,1,1,2,2};
         int size = array.length-1;
         System.out.println(ans(array,size));
+
+        // not soled
+        
     }
     public static int ans(int[] a,int high){
         int low = 0;
