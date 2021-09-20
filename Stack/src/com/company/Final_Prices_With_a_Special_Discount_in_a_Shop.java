@@ -6,10 +6,10 @@ public class Final_Prices_With_a_Special_Discount_in_a_Shop {
     public static void main(String[] args) {
         int[] prices = {8,4,6,2,3};
         int[] ans = finalPrices(prices);
-        for (int i =0;i< ans.length;i++) System.out.print(ans[i]+" ");
+        for (int an : ans) System.out.print(an + " ");
     }
     public static int[] finalPrices(int[] prices) {
-        //smallest left element
+        //smallest left element.
         int[] ans = new int[prices.length];
         ans[prices.length-1] = prices[prices.length-1];
         Stack<Integer> stack = new Stack<>();
