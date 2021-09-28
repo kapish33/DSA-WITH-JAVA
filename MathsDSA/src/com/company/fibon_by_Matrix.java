@@ -2,10 +2,8 @@ package com.company;
 
 public class fibon_by_Matrix {
     public static void main(String[] args) {
-
-        System.out.println(fib(4));
+        System.out.println(fib(152));
     }
-    int[][] A = new int[2][2];
     public static int fib(int n) {
         if(n <= 1){
             return n;
