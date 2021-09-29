@@ -3,7 +3,7 @@ package com.company;
 public class power_of_num {
     public static void main(String[] args) {
         int num = 2;
-        int power= 11;
+        int power= 10;
         System.out.println(recoursePower(num,power));
         System.out.println(iterativePower(num,power));
     }
