@@ -23,5 +23,4 @@ public class Divide_Two_Integers {
         }
         return sign?q:-q;
     }
-
 }
