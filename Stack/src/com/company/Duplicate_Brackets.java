@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class Duplicate_Brackets {
     public static void main(String[] args) {
+        // it will see an expression and will tell does this exp has extra brakets:) and not needed! at all brackets exists
         String sam = "(((a+b))+(b+c))";
         System.out.println(dublicate_check(sam));
     }
