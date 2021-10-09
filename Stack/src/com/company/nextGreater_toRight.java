@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class nextGreater_toRight {
     public static void main(String[] args) {
-        int[] array = {2,5,9,3,1,12,6,8,7};
+        int[] array = {5,4,1,2,3};
         int[] answer = nextGreaterToLeft(array);
         int[] answer1 = nextGreaterToLeft(array);
         for (int i = 0;i< answer.length;i++) System.out.print(answer[i]+" ");
