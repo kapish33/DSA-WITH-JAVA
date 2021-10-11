@@ -14,32 +14,46 @@ public class next_greater_element {
 
             for (int j =0;j<size;j++) array[j]= sc.nextInt();
             answer(array,size);
-
         }
     }
     public static void answer(int[] arr,int size){
-        int[] ans1 =  new int[size];// for left
+        int[] left =  new int[size];// for left
         Stack<Integer> stack = new Stack<>();
-        Stack<Integer>index = new Stack<>();
 
         for (int i = 0;i<size;i++){
             int element = arr[i];
-            while (stack.size()>0 && stack.peek()<=element) stack.pop();
-            ans1[i]= stack.size()>0 ? stack.peek() : -1;
-            stack.push(element);
+            while (stack.size()>0 && arr[stack.peek()]<=element) stack.pop();
+            left[i]= stack.size()>0 ? stack.peek() : -1;
+            stack.push(i);
         }
+        //for (int i = 0;i<size;i++) System.out.print(ans1[i]+" "); //test for gettting next greater to left
+        //System.out.println();
 
-        int[] nge = new int[arr.length]; // for right
+        int[] right = new int[arr.length]; // for right
         Stack<Integer>  st =new Stack<>();
         st.push(arr[arr.length-1]);
-        nge[arr.length-1]=-1;
+        right[arr.length-1]=-1;
         for (int i = arr.length-2;i>=0;i--){
-            while (st.size()>0 && arr[i]>=st.peek()) st.pop();
-            if (st.size() == 0) nge[i]=-1;
-            else nge[i]=st.peek();
-            st.push(arr[i]);
+            while (st.size()>0 && arr[i]>=arr[st.peek()]) st.pop();
+            if (st.size() == 0) right[i]=-1;
+            else right[i]=st.peek();
+            st.push(i);
         }
-
-        for (int i = 0;i<size;i++) System.out.print(Math.max(nge[i],ans1[i] )+" ");
+//        for (int i = 0;i<size;i++) System.out.print(nge[i]+" "); test for gettting next greater to right
+        int[] ans = new int[size];
+        for (int i=0;i<left.length;i++){
+            if (left[i] == -1 && right[i] == -1) ans[i] = -1;
+            else if (left[i] == -1 ) ans[i] = right[i];
+            else if (right[i] == -1) ans[i] = left[i];
+            else{
+                int temp1 = Math.abs(i - left[i]); //finding the absolute difference
+                int temp2 = Math.abs(i - right[i]); // finding the absolute difference
+                ans[i] = temp1 > temp2 ? right[i] : left[i];
+            }
+        }
+        for (int i:ans) {
+            if (i == -1) System.out.print(-1+" ");
+            else System.out.print(arr[i]+" ");
+        }
     }
 }
