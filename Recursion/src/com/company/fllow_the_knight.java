@@ -3,13 +3,35 @@ package com.company;
 import java.util.Scanner;
 
 public class fllow_the_knight {
+    static int[][] board = new int[10][10];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(),r = sc.nextInt(),c = sc.nextInt();
-        int[][] chess = new int[n][n];
-        System.out.println(printKnightToor(chess,r,c));
+
+        int i = sc.nextInt(),j = sc.nextInt(),n = sc.nextInt();
+        printKnightToor(n,i,j,board);
     }
-    public static int printKnightToor(int[][] chess,int r,int c){
-        return 8;
+    public static void printKnightToor(int steps,int i ,int j,int[][] board){
+        int count= 0;
+        if (i<0 || i>9 || j<0 || j>9){
+            if (steps ==0) {
+                board[i][j] = 1;
+                return;
+            }
+            printKnightToor(steps-1,i-2,j+1,board);
+            printKnightToor(steps-1,i-2,j-1,board);
+
+            printKnightToor(steps-1,i-1,j+2,board);
+            printKnightToor(steps-1,i-1,j-2,board);
+
+            printKnightToor(steps-1,i+2,j+1,board);
+            printKnightToor(steps-1,i+2,j-1,board);
+
+            printKnightToor(steps-1,i+1,j-2,board);
+            printKnightToor(steps-1,i+1,j+2,board);
+        }
+//        int count = 0;
+        for (int p = 0;p<board.length;p++) for (int l  = 0;l< board.length;l++) if (board[p][l]==1) count++;
+        System.out.println(count);
     }
+
 }
