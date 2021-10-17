@@ -11,7 +11,7 @@ public class tower_of_hanoi {
         int t3d = sc.nextInt();
         toh(n,t1d,t2d,t3d);
     }
-    public static void toh(int n ,int t1d,int t2d,int t3d){
+    public static void toh(int n ,int t1d,int t2d,int t3d){ // toh(source, destination, helper)
         if (n==0) return;
         toh(n-1,t1d,t3d,t2d);
         System.out.println(n+ "[ "+t1d+" -> "+t2d+"]");
