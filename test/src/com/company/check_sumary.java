@@ -40,9 +40,6 @@ public class check_sumary {
         }
     }
 }
-    Masai School
-
-    Powered by OnlineJudge   Version: 20211018-7e5cd
 
 /*
 Description
