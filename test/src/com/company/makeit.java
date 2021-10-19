@@ -30,7 +30,6 @@ public class makeit {
                     set.remove(ans.charAt(i));
                 }
             }
-
         return fans.toString();
     }
 }
