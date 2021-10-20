@@ -1,11 +1,12 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class power_of_num {
     public static void main(String[] args) {
-        int num = 2;
-        int power= 10;
-        System.out.println(recoursePower(num,power));
-        System.out.println(iterativePower(num,power));
+        Scanner sc = new Scanner(System.in);
+        System.out.println(recoursePower(sc.nextInt(), sc.nextInt()));
+//        System.out.println(iterativePower(num,power));
     }
     public static int recoursePower(int num, int power){
         if(power==0) return 1;
