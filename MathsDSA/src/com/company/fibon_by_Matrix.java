@@ -1,8 +1,11 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class fibon_by_Matrix {
     public static void main(String[] args) {
-        System.out.println(fib(152));
+        Scanner sc = new Scanner(System.in);
+        System.out.println(fib(sc.nextInt()));
     }
     public static int fib(int n) {
         if(n <= 1){

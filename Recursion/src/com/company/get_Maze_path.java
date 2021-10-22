@@ -7,27 +7,22 @@ public class get_Maze_path {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int row = sc.nextInt(),col = sc.nextInt();
-
+        ArrayList<String> paths =  getMazePaths(0,0,row-1,col-1);
+        System.out.println(paths);
     }
-    public static ArrayList<String> getMazePaths(int srv,int srh,int dir_r,int dir_c){
-        if (srv ==dir_c && srh == dir_r){
+    public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+        if(sr > dr || sc > dc) return new ArrayList<>();
+        if(sr == dr && sc == dc){
             ArrayList<String> bres = new ArrayList<>();
             bres.add("");
-            return  bres;
+            return bres;
         }
-        ArrayList<String> hpahs = new ArrayList<>();
-        ArrayList<String> vpahs = new ArrayList<>();
-        if (srh < dir_c) getMazePaths(srv, srh+1, dir_r, dir_c);
-        if (srv <dir_r) getMazePaths(srv+1, srh, dir_r, dir_c);
+        ArrayList<String> hpaths = getMazePaths(sr, sc + 1, dr, dc);
+        ArrayList<String> vpaths = getMazePaths(sr + 1, sc, dr, dc);
+        ArrayList<String> paths = new ArrayList<>();
 
-        ArrayList<String> path = new ArrayList<>();
-
-        for (String hpath: hpahs) {
-            hpahs.add("h"+hpath);
-        }
-        for (String vpath: vpahs) {
-            hpahs.add("v"+vpath);
-        }
-        return path;
+        for(String hpath: hpaths) paths.add('h' + hpath);
+        for(String vpath: vpaths) paths.add('v' + vpath);
+        return paths;
     }
 }
