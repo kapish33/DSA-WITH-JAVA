@@ -38,4 +38,3 @@ public class Team_of_Heroes {
         }
     }
 }
-   
