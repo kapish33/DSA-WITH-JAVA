@@ -14,7 +14,7 @@ public class printSS {
         }
         char first = question.charAt(0);
         String rest_question =  question.substring(1);
-        printSSq(rest_question,ans+"");
+        printSSq(rest_question,ans);
         printSSq(rest_question,ans+first);
     }
 }
