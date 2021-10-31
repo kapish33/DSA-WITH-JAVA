@@ -38,7 +38,6 @@ public class encoding {
                 char code = (char) ('a'+ch12v-1);
                 printEncoding(roq,ans+code);
             }
-
         }
     }
 }
