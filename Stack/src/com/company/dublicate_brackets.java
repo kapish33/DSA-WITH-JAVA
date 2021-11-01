@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class balanced_brackets {
+public class dublicate_brackets {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(checkBalance(sc.next()));
