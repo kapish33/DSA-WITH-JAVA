@@ -1,12 +1,8 @@
 package com.company;
-
-
-
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class god_pairs {
-
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         int test= sc.nextInt();
