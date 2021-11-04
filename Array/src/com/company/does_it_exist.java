@@ -8,7 +8,6 @@ public class does_it_exist {
         for (int i = 0;i<test;i++) {
             int length = sc.nextInt();
             int[] array = new int[length];
-            //feeding integer in
             for (int f = 0 ;f<length;f++){
                 array[f]=sc.nextInt();
             }
