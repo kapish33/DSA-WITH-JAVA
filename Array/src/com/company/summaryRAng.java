@@ -21,8 +21,7 @@ public class summaryRAng {
             if(nums[i]-nums[i-1] !=1){
                 StringBuilder sb = new StringBuilder();
                 sb.append(nums[pos]);
-                if(i-pos-1==0)
-                    result.add(sb.toString());
+                if(i-pos-1==0) result.add(sb.toString());
                 else result.add(sb.append("->").append(nums[i-1]).toString());
                 pos = i;
             }
