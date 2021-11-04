@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class contaions_dublicate {
     public static void main(String[] args) {
@@ -11,7 +10,7 @@ public class contaions_dublicate {
         int[] array = new int[size];
     }
     public static boolean containsDuplicate(int[] nums) {
-        Set<Integer> ans = new HashSet<Integer>();
+        HashSet<Integer> ans = new HashSet<Integer>();
         for (int num : nums) ans.add(num);
         return nums.length - ans.size() != 0;
     }
