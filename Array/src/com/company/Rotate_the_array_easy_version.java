@@ -18,8 +18,6 @@ public class Rotate_the_array_easy_version {
                 array[j]= sc.nextInt();
             }
             for (int j =0 ;j<size;j++){
-//                System.out.println((j+shift)% (array.length-1));
-//                System.out.println(array[(j+shift)% (array.length-1)]+" ");
                 if (new_shift>0){
                     System.out.print(array[(size+j-new_shift)% array.length]+" ");
                 }else {
