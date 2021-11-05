@@ -25,8 +25,9 @@ public class sliding_Window_maximum {
             st.push(i);
         }
         // now  twist comes
+        int j = 0;
         for (int i = 0; i <= size-k ; i++) {
-            int j = i;
+            if (j<i) j = i;
             while (ngl[j] < i+k) j = ngl[j];
             System.out.println(array[j]);
         }
