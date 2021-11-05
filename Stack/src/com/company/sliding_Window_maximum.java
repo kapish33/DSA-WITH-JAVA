@@ -29,7 +29,7 @@ public class sliding_Window_maximum {
         for (int i = 0; i <= size-k ; i++) {
             if (j<i) j = i;
             while (ngl[j] < i+k) j = ngl[j];
-            System.out.println(array[j]);
+            System.out.print(array[j]+" ");
         }
     }
 
