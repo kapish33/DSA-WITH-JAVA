@@ -10,9 +10,9 @@ public class sliding_Window_maximum {
         int[] array = new int[size];
         for (int i = 0; i < size; i++) array[i]= sc.nextInt();
         int slice =  sc.nextInt();
-        int[] ans = max_in_k_sized_window(array,slice,size);
+        max_in_k_sized_window(array,slice,size);
     }
-    public static int[] max_in_k_sized_window(int[] array,int k,int size){
+    public static void max_in_k_sized_window(int[] array,int k,int size){
         // first let's find ngl to right;
         Stack<Integer> st = new Stack<>();
         int[] ngl = new int[size];
