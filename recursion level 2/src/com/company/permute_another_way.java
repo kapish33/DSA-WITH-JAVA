@@ -23,7 +23,6 @@ public class permute_another_way {
                 used_items[i]=0;
             }
             permutation(current_box+1, total_spots, used_items, selection_so_far, total_selection, asn+0);
-
         }
     }
 }
