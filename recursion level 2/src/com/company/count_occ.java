@@ -10,15 +10,16 @@ public class count_occ {
         for (int i = 0; i < test; i++) {
             int[] ans = new int[10];
             int size = sc.nextInt();
-            String digit = sc.next();
-            // frequencey array
-//            for (int j = 0; j < size; j++) {
-//                int j = digit.charAt(j)-'0'; //21321
-//                ans[digit.charAt(j)-'0']=ans[digit.charAt(j)-'1']+1;
-//            }
+            int digit = sc.nextInt();
+            while (digit>0){
+                int rem =  digit%10;
+                ans[rem]++;
+                digit=digit/10;
+            }
             for (int j = 0; j < 10; j++) {
                 System.out.print(ans[9-j]+" ");
             }
+            System.out.println();
         }
     }
 }
