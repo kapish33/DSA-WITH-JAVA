@@ -2,7 +2,7 @@ package com.company;
 
 public class sum_of_all_subsets {
     public static void main(String[] args) {
-        System.out.println(subsetXOR);
+
     }
     int sum = 0;
 
