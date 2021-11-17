@@ -16,7 +16,6 @@ public class bainary_search {
             else if (nums[mid] < target) {
                 start = mid + 1;
             } else end = mid - 1;
-
         }
         return -1;
     }
