@@ -1,17 +1,22 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class recursive_binary_search {
     public static void main(String[] args) {
-        int[] array = {1,2,3,4,5,6,7,8,9};
-        int traget =  4;
-        System.out.println(num(array,traget,0, array.length));
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] array = new int[size];
+        int target = sc.nextInt();
+        for (int i = 0; i < size; i++) array[i]= sc.nextInt();
+        System.out.println(binarySearch(array,target,0, size));
     }
-    public static int num(int[] array,int target,int left,int right){
-        int mid = right+(left-right)/2;
-        if (array[mid]==target) return mid;
-        else if (array[mid]>target) return num(array, target, left, mid-1);
-        else if (array[mid]<target) return num(array, target, mid+1, right);
-        return -1;
+    public static int binarySearch(int[] nums, int left, int right, int target) {
+        if (left < right) return -1;
+        int mid = left + (right - left) / 2;
+        if (target == nums[mid]) return 1;
+        else if (target < nums[mid]) return binarySearch(nums, left, mid - 1, target);
+        else return binarySearch(nums, mid + 1, right, target);
     }
 }
 //https://www.desmos.com/calculator/daocnxt46b

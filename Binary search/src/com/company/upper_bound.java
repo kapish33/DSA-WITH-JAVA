@@ -1,9 +1,15 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class upper_bound {
     public static void main(String[] args) {
-        int[] array= {1,3,6,6,8};
-        int size = 5,target = 10;
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int target = sc.nextInt();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) array[i]= sc.nextInt();
+
         System.out.println(lowe_bound_sear(array,size,target));
     };
     public static int lowe_bound_sear(int[] nums,int end,int target){

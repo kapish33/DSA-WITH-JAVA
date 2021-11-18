@@ -1,10 +1,15 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class bainary_search {
     public static void main(String[] args) {
-        int[] nums = {-1,0,3,5,9,12};
-        int target = 9;
-        System.out.println(search(nums,target));
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] array = new int[size];
+        int target = sc.nextInt();
+        for (int i = 0; i < size; i++) array[i]= sc.nextInt();
+        System.out.println(search(array,target));
     }
     public static int search(int[] nums, int target) {
         int start = 0;
