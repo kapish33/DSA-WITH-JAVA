@@ -13,10 +13,10 @@ public class upperbond {
     }
     public static int tpp(int[] nums ,int target){
         int low = 0,high = nums.length-1,ans=-1;
-        while(low<=high){
+        while(low<high){
             int mid = (low+high)/2;
             if (nums[mid]>=target){
-                high=mid-1;
+                high=mid;
             }else {
                 low=mid+1;
             }
