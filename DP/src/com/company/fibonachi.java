@@ -8,7 +8,7 @@ public class fibonachi {
         int n = sc.nextInt();
 //        int fibo = Fibo(n);
 //        long[] na = new long[6];
-        long dpf = FibMemoized(n,new long[n+1]);
+        long dpf = fib(n,new long[n+1]);
         System.out.println(dpf);
     }
     public static int Fibo(int n) {
@@ -27,4 +27,17 @@ public class fibonachi {
         qb[n] = fibn;
         return fibn;
     }
+    public static long finome(int n,long[] qb){
+        if (n<2) return n;
+        if (qb[n]!=0) return qb[n];
+        qb[n]=finome(n-1,qb)+finome(n-2,qb);
+        return qb[n];
+    }
+    public static long fib(int n,long[] arr){
+        if(n==0 || n==1) return n;
+        if(arr[n]!=0)return arr[n];
+        arr[n] = fib(n-1,arr)+ fib(n-2,arr);
+        return arr[n];
+    }
+
 }
