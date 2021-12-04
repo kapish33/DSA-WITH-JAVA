@@ -13,33 +13,37 @@ public class Nikhil_serach {
         // test cases handeling
         int test = sc.nextInt();
         for (int i = 0; i < test; i++) {
-            System.out.println(-(upper_bound(array,sc.nextInt(),n)-lower_bound(array, sc.nextInt(), n))-1);
+            int q = sc.nextInt();
+            int x = sc.nextInt();
+            System.out.println(myfunc(array,n,q,x));
         }
     }
-    public static int lower_bound(int[] array,int key,int length){
-        int low = 0,high=length-1,ans =-1;
-        while (low<=high){
-            int mid = (low+high)/2;
-            if (array[mid]==key) {
-                ans=mid;
-                high=mid+1;
+    public static int myfunc(int[] arr, int n,int q,int x) {
+        int low = 0;
+        int high = n - 1;
+        int ans = -1;
+        while (low <= high) {
+            int mid = low + (high - low)/ 2;
+            if (q == 0) {
+                if (arr[mid] >= x) {
+                    ans = mid;
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
             }
-            if (array[mid]<key) low=mid+1;
-            else high=mid-1;
-        }
-        return ans;
-    }
-    public static int upper_bound(int[] array,int key,int length){
-        int low = 0,high=length-1,ans =-1;
-        while (low<=high){
-            int mid = (low+high)/2;
-            if (array[mid]==key) {
-                ans=mid;
-                low=mid+1;
+
+            if (q == 1) {
+                if (arr[mid] > x) {
+                    ans = mid;
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
             }
-            if (array[mid]<key) low=mid+1;
-            else high=mid-1;
         }
-        return ans;
+
+        if (ans == -1) return 0;
+        else return (n - ans);
     }
 }

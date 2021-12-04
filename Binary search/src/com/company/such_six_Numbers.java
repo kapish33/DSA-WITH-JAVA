@@ -17,7 +17,7 @@ public class such_six_Numbers {
         // a * b +c = ( f + e ) * d
 //        now explore all options for  LHS
 //        ArrayList<Integer> array_lhs = new ArrayList<>();
-        Set<Integer> array_lhs = new HashSet<>();
+        List<Integer> array_lhs = new ArrayList<>();
         for (int i = 0; i < size; i++) { // geting a
             for (int j = 0; j < size; j++) { // getting b
                 for (int k = 0; k < size; k++) { // getting c
@@ -26,19 +26,25 @@ public class such_six_Numbers {
             }
         }
         // rhs
-//        ArrayList<Integer> array_rhs = new ArrayList<>();
-        Set<Integer> array_rhs = new HashSet<>();
+//        ArrayList<Integer> array_rhs = new ArrayList<>();  ( f + e ) * d
+        List<Integer> array_rhs = new ArrayList<>();
         for (int i = 0; i < size; i++) { // geting f
             for (int j = 0; j < size; j++) { // getting e
                 for (int k = 0; k < size; k++) { // getting d
                     if (array[k] !=0){
-                        array_rhs.add((array[i]*array[j])*array[k]);
+                        array_rhs.add((array[i]+array[j])*array[k]);
                     }
                 }
             }
         }
-        System.out.println(array_lhs);
-        System.out.println(array_rhs);
+//        System.out.println(array_lhs);
+//        System.out.println(array_rhs);
+
+        for (Integer l:array_lhs) {
+            for (Integer r:array_rhs) {
+                if (Objects.equals(l, r)) count++;
+            }
+        }
 
         return count;
     }
