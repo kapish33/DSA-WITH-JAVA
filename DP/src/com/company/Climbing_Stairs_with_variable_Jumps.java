@@ -14,9 +14,7 @@ public class Climbing_Stairs_with_variable_Jumps {
             for (int j = 1; j < array[i] && i+j< dp.length; j++) {
                 dp[i]+=dp[i+j];
             }
-
         }
         System.out.println(dp[0]);
     }
-
 }
