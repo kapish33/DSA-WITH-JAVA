@@ -9,39 +9,36 @@ function runProgram(input) {
     eatBanana(size, array);
   }
 }
-function eatBanana(size, array) {
-  //   var fast = 0;
-  //   var slow = 0;
-  // let make first eat for fast
-  let left = 0;
-  let right = size - 1;
+function eatBanana(n, array) {
+  var left = 0;
+  var right = n - 1;
   while (left < right) {
-    // lets make fast eat firts
-    let time = array[left++] / 2;
-    // pura kaha la ga && kuch part he kaha paya ga
+    var time = array[left] / 2;
+    left++;
+
     if (time <= array[right]) {
-      // eat
-      if (array[right] % time === 0) {
+      if (array[right] == time) {
         right--;
-      } else {
-        var bach = array[right] % time;
-        array[right] = bach;
+        time = 0;
+      } else if (array[right] > time) {
+        var remain = array[right] - time;
+        array[right] = remain;
+        time = 0;
       }
     } else {
-      // eat
-      while (time !== 0) {
-        if (array[right] % time === 0) {
-          time -= array[right];
-          right--;
+      while (time !== 0 && left !== right) {
+        if (array[right] > time) {
+          var remain = array[right] - time;
+          array[right] = remain;
+          time = 0;
         } else {
-          var bach = array[right] % time;
-          array[right] = bach;
+          var time = time - array[right];
+          right--;
         }
       }
     }
-    // return { left, size };
-    console.log(left + 1, right);
   }
+  console.log(left, n - left);
 }
 if (process.env.USERNAME === "kapish") {
   runProgram(`
