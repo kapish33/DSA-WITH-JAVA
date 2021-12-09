@@ -3,22 +3,41 @@ package com.company;
 import java.util.Scanner;
 
 public class maximum_gold {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int rows = sc.nextInt(); // for various i
-        int cols = sc.nextInt(); // for various j
-        int[][] array = new int[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                array[i][j]= sc.nextInt();
+    public static void main(String[] args) throws Exception {
+       Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[n][m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
             }
         }
-        int[][] dp = new int[rows][cols];
-        for (int i = rows-1; i >= 0; i--) {
-            for (int j = cols-1; j >=0 ; j--) {
-                if (j==array[0].length-1){};
-                else if (i==0)
+
+        int[][] dp = new int[arr.length][arr[0].length];
+
+        for (int j = arr[0].length - 1; j >= 0; j--) {
+            for (int i = 0; i < arr.length; i++) {
+                if (j == arr[0].length - 1) {
+                    dp[i][j] = arr[i][j];
+                } else if (i == 0) {
+                    dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], dp[i + 1][j + 1]);
+                } else if (i == arr.length - 1) {
+                    dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], dp[i - 1][j + 1]);
+                } else {
+                    dp[i][j] = arr[i][j] + Math.max(dp[i][j + 1], Math.max(dp[i - 1][j + 1], dp[i + 1][j + 1]));
+                }
             }
         }
+
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < dp.length; i++) {
+            if (dp[i][0] > max) {
+                max = dp[i][0];
+            }
+        }
+
+        System.out.println(max);
     }
 }
