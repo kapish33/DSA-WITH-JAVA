@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class hosue_robber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] array = {1,2,3,1};
-        System.out.println(steal(array,array.length-1,0,new int[array.length+1]));
+        int[] array = {1,12,3,1};
+        System.out.println(steal(array,array.length,0,new int[array.length+1]));
+        System.out.println(rob(array, array.length));
     }
     public static int steal(int[] array,int size,int start,int[] dp){
         if (start>=size) return 0;
@@ -17,5 +18,15 @@ public class hosue_robber {
         int notSteal = steal(array, size, start+1,dp);
         dp[start] = Math.max(ste,notSteal);
         return dp[start];
+    }
+    public static int rob(int[] array,int size){
+        int[] dp = new int[size+2];
+        dp[size]=0;
+        dp[size+1]=0;
+        for (int i = size-1; i >=0; i--) {
+            dp[i]=array[i] +dp[i+2];
+            dp[i]=Math.max(dp[i],dp[i+1]);
+        }
+        return dp[0];
     }
 }
