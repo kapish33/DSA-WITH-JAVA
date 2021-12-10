@@ -29,4 +29,15 @@ public class hosue_robber {
         }
         return dp[0];
     }
+    public static int pureItr(int[] array,int size){
+        int iplus1 = 0;
+        int iplus2 = 0;
+        for (int i = size-1; i >=0 ; i--) {
+            int current = array[i]+iplus2;
+            current = Math.max(current,iplus1);
+            iplus2 =iplus1;
+            iplus1= current;
+        }
+        return iplus1;
+    }
 }
