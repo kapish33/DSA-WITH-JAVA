@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class maxi_produxt {
     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
-        int[] array = {0,5,6,-5};
-        System.out.println(maxproduct(array,4));
+        int[] array = {-5};
+        System.out.println(maxproduct(array,1));
     }
 
     public static int maxproduct(int[] array,int size){
