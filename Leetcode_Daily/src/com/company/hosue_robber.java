@@ -8,6 +8,7 @@ public class hosue_robber {
         int[] array = {1,12,3,1};
         System.out.println(steal(array,array.length,0,new int[array.length+1]));
         System.out.println(rob(array, array.length));
+        System.out.println(pureItr(array,array.length));
     }
     public static int steal(int[] array,int size,int start,int[] dp){
         if (start>=size) return 0;
