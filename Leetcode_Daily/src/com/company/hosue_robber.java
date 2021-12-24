@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class hosue_robber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] array = {1,12,3,1};
+        int[] array = {1,100};
         System.out.println(steal(array,array.length,0,new int[array.length+1]));
         System.out.println(rob(array, array.length));
         System.out.println(pureItr(array,array.length));
@@ -35,7 +35,7 @@ public class hosue_robber {
         int iplus2 = 0;
         for (int i = size-1; i >=0 ; i--) {
             int current = array[i]+iplus2;
-            current = Math.max(current,iplus1);
+            current = Math.min(current,iplus1);
             iplus2 =iplus1;
             iplus1= current;
         }

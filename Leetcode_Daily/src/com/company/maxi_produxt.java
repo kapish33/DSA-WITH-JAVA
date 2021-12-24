@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class maxi_produxt {
     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
-        int[] array = {-5};
+        int[] array = {8,15,3,7};
         System.out.println(maxproduct(array,1));
     }
 
