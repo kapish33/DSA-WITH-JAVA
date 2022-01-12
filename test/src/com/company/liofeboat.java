@@ -1,3 +1,4 @@
+package com.company;
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class liofeboat {
             }
             // sort array
             Arrays.sort(w);
-            System.out.println(getMinLifeBoats(w, k));
+            System.out.println(minLifeboats(w,k));
         }
     }
     public static int minLifeboats(int[] w, int k) {
@@ -31,6 +32,6 @@ public class liofeboat {
             count++;
         }
         return count;
-        
+
     }
 }
