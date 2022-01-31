@@ -15,7 +15,7 @@ public class nthroot {
     public static int nthroot(int a, int c) {
         // Write your code here
         // a ^ b = c; b=log(c)/log(a);
-        int b = (int) Math.log(c)/Math.log(a);
+        int b = (int) ((int) Math.log(c)/Math.log(a));
         return (int) Math.pow(a,b);
     }
 }
