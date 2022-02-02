@@ -21,8 +21,10 @@ public class Minimum_Sum {
             sum +=array[i];
         }
         min=sum;
-        for (int i = size-windows+1; i < size; i++) {
-            int remove = array[size-i];
+        for (int i = windows; i < size; i++) {
+            sum = sum - array[i - windows] + array[i];
+            min = Math.min(min, sum);
         }
+        return min;
     }
 }
