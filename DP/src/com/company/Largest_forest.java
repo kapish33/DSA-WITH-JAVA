@@ -24,6 +24,6 @@ TWTTT
 WWTTT
     */
     public static int longestAdjecentTree(char[][] forest,int size) {
-        
+        return 1;
     }
 }
