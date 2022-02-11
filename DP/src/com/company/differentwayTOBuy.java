@@ -10,7 +10,7 @@ public class differentwayTOBuy {
         int price=sc.nextInt();
         int[] array=new int[size];
         for(int i=0;i<size;i++)array[i]=sc.nextInt();
-        combinator(,size,price,0,"",0,array);
+        combinator(size,price,0,"",0,array);
         if(flag==0)System.out.println("-1");
     }
     public static void combinator(int len,int price,int sum,String str,int index,int[] array){
